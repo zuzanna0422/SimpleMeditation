@@ -1,6 +1,5 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, TouchableOpacity} from 'react-native';
+import React from 'react';
 
 interface CustomButtonsProps {
     onPress: () => void;
@@ -11,8 +10,11 @@ interface CustomButtonsProps {
 const CustomButtons = ({ onPress, title,  textStyles = "", containerStyles = ""}: CustomButtonsProps) => {
   return (
     <TouchableOpacity
-    activeOpacity={0.7}>
-      <Text>{title}</Text>
+    activeOpacity={0.7}
+    onPress={onPress}
+    className={`bg-white rounded-xl min-h-[62px] justify-center items-center ${containerStyles}`}>
+
+      <Text className={`font-semibold text-lg ${textStyles}`}>{title}</Text>
     </TouchableOpacity>
   )
 }
